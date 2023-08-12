@@ -5,6 +5,35 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Back to Top button styles */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .back-to-top:hover {
+          background-color: #444;
+      }
+
+      .back-to-top a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 20px;
+      }
+  </style>
   <title>ROGER WANG - Portfolio</title>
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
@@ -284,6 +313,39 @@
       </p>
     </div>
   </footer>
+
+  <!-- Back-to-Top Button -->
+  <div id="back-to-top" class="back-to-top">
+      <a href="#header"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- Add the Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- JavaScript code for Back to Top button behavior -->
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const backToTopButton = document.getElementById("back-to-top");
+          
+          // Show/hide the button based on the scroll position
+          window.addEventListener("scroll", function () {
+              if (window.pageYOffset > 300) {
+                  backToTopButton.style.transform = "scale(1)";
+              } else {
+                  backToTopButton.style.transform = "scale(0)";
+              }
+          });
+          
+          // Scroll to the top when the button is clicked
+          backToTopButton.addEventListener("click", function (event) {
+              event.preventDefault();
+              window.scrollTo({
+                  top: 0,
+                  behavior: "smooth"
+              });
+          });
+      });
+  </script>
+  
   <!-- Script for the LightBox -->
   <script>
     Fancybox.bind("[data-fancybox]", {});
