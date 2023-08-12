@@ -276,6 +276,39 @@
       </div>
     </section>
   </div>
+
+  <!-- Back-to-Top Button -->
+  <div id="back-to-top" class="back-to-top">
+      <a href="#header"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- Add the Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- JavaScript code for Back to Top button behavior -->
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const backToTopButton = document.getElementById("back-to-top");
+          
+          // Show/hide the button based on the scroll position
+          window.addEventListener("scroll", function () {
+              if (window.pageYOffset > 300) {
+                  backToTopButton.style.transform = "scale(1)";
+              } else {
+                  backToTopButton.style.transform = "scale(0)";
+              }
+          });
+          
+          // Scroll to the top when the button is clicked
+          backToTopButton.addEventListener("click", function (event) {
+              event.preventDefault();
+              window.scrollTo({
+                  top: 0,
+                  behavior: "smooth"
+              });
+          });
+      });
+  </script>
+  
   <!-- Footer -->
   <footer>
     <div class="max-w-screen-xl py-16 mx-auto">
@@ -314,38 +347,6 @@
     </div>
   </footer>
 
-  <!-- Back-to-Top Button -->
-  <div id="back-to-top" class="back-to-top">
-      <a href="#header"><i class="fas fa-arrow-up"></i></a>
-  </div>
-  <!-- Add the Font Awesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-  <!-- JavaScript code for Back to Top button behavior -->
-  <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const backToTopButton = document.getElementById("back-to-top");
-          
-          // Show/hide the button based on the scroll position
-          window.addEventListener("scroll", function () {
-              if (window.pageYOffset > 300) {
-                  backToTopButton.style.transform = "scale(1)";
-              } else {
-                  backToTopButton.style.transform = "scale(0)";
-              }
-          });
-          
-          // Scroll to the top when the button is clicked
-          backToTopButton.addEventListener("click", function (event) {
-              event.preventDefault();
-              window.scrollTo({
-                  top: 0,
-                  behavior: "smooth"
-              });
-          });
-      });
-  </script>
-  
   <!-- Script for the LightBox -->
   <script>
     Fancybox.bind("[data-fancybox]", {});
